@@ -5,13 +5,15 @@ wb = openpyxl.Workbook()
 
 sheet = wb.active
 sheet.title = "dados de exemplo "
-cabecalhos = ["nome","idade","email"]
+cabecalhos = ["nome","idade","email","cidade","estado","pais"]
 sheet.append(cabecalhos)
 
 dados = [
-    ["lucas kalell", 26, "kalell306@gmail.com" ],
-    ["ane caroline", 3, "anecaroline@hotmail.com"],
-    ["carolinehainocz",23,"carol@gmail.com"],
+    ["lucas f", 26, "kalell306@gmail.com","londrina", "parana","brasil"],
+    ["lucas bruno", 26, "kalew909@gmail.com","ponta grossa", "parana","brasil"],
+    ["lucas o.g", 26, "klew300@gmail.com","londrina", "parana","brasil"],
+    ["ane peixe", 10, "anecars@hotmail.com","ponta grossa", "parana","brasil"],
+    ["carolin wrosh",23,"tramontina@gmail.com","londrina", "parana","brasil"],
 ]
 
 for linha in dados:
