@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surpresaaaaaaa</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f8ff;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
+        #sim {
+            background-color: #4CAF50;
+            color: white;
+        }
+        #nao {
+            background-color: #f44336;
+            color: white;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Namora comigo? ?</h1>
+        <button id="sim" class="button">Sim</button>
+        <button id="nao" class="button">Não</button>
+    </div>
+
+    <script>
+        const simButton = document.getElementById('sim');
+        const naoButton = document.getElementById('nao');
+
+        simButton.addEventListener('click', function() {
+            window.location.href = 'https://www.youtube.com/watch?v=CPd-nqywhbA';
+        });
+
+        naoButton.addEventListener('mouseover', function() {
+            const maxX = window.innerWidth - naoButton.offsetWidth;
+            const maxY = window.innerHeight - naoButton.offsetHeight;
+            const randomX = Math.floor(Math.random() * maxX);
+            const randomY = Math.floor(Math.random() * maxY);
+            naoButton.style.left = randomX + 'px';
+            naoButton.style.top = randomY + 'px';
+        });
+    </script>
+</body>
+</html>
