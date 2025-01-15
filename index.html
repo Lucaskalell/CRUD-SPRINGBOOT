@@ -1,82 +1,179 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feliz Dia dos Namorados</title>
+    <title>My Starter Evolution</title>
     <style>
-        
+        /* Definindo o fundo com preto e gradientes de cinza */
         body {
-            background-color: rgb(107, 101, 101);
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1b1b1b 0%, #2f2f2f 100%);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
 
-        .painel{
-            margin: auto;
-            background-color: rgba(255, 255, 255, 0.993);
-            width: 500px;
-            height: 700px;
-            border-radius: 20px;
+        /* Estilizando o container com tons de cinza */
+        .container {
+            background: #333;
+            max-width: 500px;
+            width: 100%;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
             text-align: center;
-            padding-top: 50px;
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: white;
         }
 
-        #sim {
-            height: 55px;
-            width: 100px;
-            background-color: rgb(25, 146, 35);
-            border: 2px solid rgb(5, 5, 5);
-            border-radius: 10px;
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+            color: #ccc;
+        }
+
+        /* Inputs com bordas cinzas e estilo sóbrio */
+        input, select {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #555;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 1em;
+            background-color: #1b1b1b;
             color: white;
-            margin-left: -80px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        /* Sombra amarela canário ao focar nos inputs */
+        input:focus, select:focus {
+            border-color: #ffeb3b; /* Cor da borda em amarelo canário */
+            box-shadow: 0 0 10px rgba(255, 235, 59, 0.6); /* Sombra amarela */
+        }
+
+        /* Estilizando o botão com preto e efeito de hover e foco amarelos */
+        button {
+            width: 100%;
+            padding: 15px;
+            background-color: #444;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2em;
             cursor: pointer;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
         }
 
-        #nao {
-            position: absolute;
-            height: 55px;
-            width: 100px;
-            background-color: rgb(235, 18, 18);
-            border: 2px solid rgb(0, 0, 0);
-            border-radius: 10px;
-            color: white;
-            margin-left: 10px;
-            transition: left 0.5s ease , top 0.5s ease;
+        button:hover {
+            background-color: #555;
+            box-shadow: 0 8px 15px rgba(255, 235, 59, 0.6); /* Sombra amarela */
         }
 
-        h3 {
-            font-size: 30px;
+        #resultado {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 1.2em;
+            color: #ccc;
+        }
+
+        /* Estilizando o rodapé com um visual minimalista */
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            color: #888;
+        }
+
+        footer h2 {
+            font-size: 1.5em;
+            color: #fff;
+        }
+
+        footer a {
+            color: #ccc;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Estilizando o segundo patrocinador com sombra amarela */
+        .sponsor-yellow {
+            margin-top: 40px;
+            padding: 20px;
+            border: 1px solid #ffeb3b;
+            border-radius: 8px;
+            background-color: #444;
+            color: #fff;
+            box-shadow: 0 0 10px rgba(255, 235, 59, 0.6); /* Sombra amarela */
+        }
+
+        .sponsor-yellow a {
+            color: #ffeb3b;
+        }
+
+        .sponsor-yellow a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
-
 <body>
+    <div class="container">
+        <h1>My Starter Evolution</h1>
+        <form id="userForm">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
 
-    <div class="painel">
-        <h1>Feliz dia dos Namorados</h1>
-        <img src="https://media1.tenor.com/images/645b93ea8ebcdeaa12805e6f94060e9e/tenor.gif?itemid=14645087" alt="">
-        <h3>Quer Namorar Comigo ?</h3>
-        <button id="sim"> SIM </button>
-        <button onmouseover="fuja()" id="nao"> NÃO </button>
-    </div>
+            <label for="idade">Idade:</label>
+            <input type="number" id="idade" name="idade" required>
 
-    <script>
-        function fuja(){
-            var botaoNao = document.getElementById("nao")
-            var larguraJanela = window.innerWidth;
-            var alturaJanela = window.innerHeight;
-            var maxX = larguraJanela - botaoNao.offsetWidth;
-            var maxY = alturaJanela - botaoNao.offsetHeight;
-            var aleatorioX = Math.floor(Math.random() * maxX);
-            var aleatorioY = Math.floor(Math.random() * maxY);
-            botaoNao.style.left = aleatorioX + "px";
-            botaoNao.style.top = aleatorioY + "px";
-        }
+            <label for="altura">Altura (cm):</label>
+            <input type="number" id="altura" name="altura" required>
 
-        document.getElementById('sim') .addEventListener('click', function () {
-            window.location.href = "https://www.youtube.com/shorts/u5J-hfzHffo";
-        });
+            <label for="peso">Peso (kg):</label>
+            <input type="number" id="peso" name="peso" required>
 
-    </script>
+            <label for="objetivo">Objetivo:</label>
+            <select id="objetivo" name="objetivo" required>
+                <option value="hipertrofia">Hipertrofia</option>
+                <option value="bem_estar">Bem-estar</option>
+                <option value="perda_peso">Perda de Peso</option>
+            </select>
+
+            <button type="button" onclick="calcularIMC()">Calcular IMC</button>
+        </form>
+
+        <div id="resultado">
+            <!-- Resultado do IMC será exibido aqui -->
+        </div>
+
+        <footer>
+            <h2>Patrocinado por:</h2>
+            <div class="sponsor-yellow">
+                <p><strong>iridium Labs</strong></p>
+                <p>vai além das fórmulas avançadas e eficientes dos  produtos. Está, principalmente, no fato de oferecer soluções completas para que atletas amadores e profissionais atinjam seus objetivos, sejam eles quais forem.
+
+                    É por isso que, além da loja virtual,contamos com uma grande de serviços </p>
+                <a href="https://www.iridiumlabs.com.br/" target="_blank">Acesse site e use nosso cupom de 20% de desconto </a>
+            </div>
+            <div>
+            
+
+    <script src="app.js"></script>
 </body>
 </html>
