@@ -1,0 +1,32 @@
+name: front_flutter
+description: "A new Flutter project."
+
+# O seguinte impede que o pacote seja publicado acidentalmente no pub.dev.
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.17.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+
+  http: ^1.3.0
+  cupertino_icons: ^1.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+
+  # Para adicionar assets (como imagens ou fontes), inclua aqui:
+  # assets:
+  #   - assets/images/
+
